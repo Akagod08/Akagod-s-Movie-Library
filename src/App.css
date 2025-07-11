@@ -1,0 +1,305 @@
+/* Base styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 30px;
+  font-weight: 900;
+  transition: color 0.4s ease;
+}
+
+h1:hover {
+  color: #fff200;
+}
+
+.logo-emoji {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 50px;
+  vertical-align: middle;
+}
+
+/* Form styling */
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease forwards;
+  align-items: center;
+}
+
+.add-movie-form input[type="text"],
+.add-movie-form input[type="number"] {
+  padding: 12px;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 900;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #222;
+  color: #fff;
+  width: 100%;
+}
+
+.add-movie-form input:focus {
+  background: #333;
+}
+
+/* Shared main button style (small and same width) */
+.main-btn {
+  width: 140px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Red variant for Add Movie */
+.btn-red {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+.btn-red:hover {
+  background-color: #e60000;
+}
+
+/* Yellow variant for Download */
+.btn-yellow {
+  background-color: #ffcc00;
+  color: #111;
+}
+.btn-yellow:hover {
+  background-color: #e6b800;
+}
+
+/* Movie list styling */
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.movie-card {
+  background: linear-gradient(145deg, #1f1f1f, #111);
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: fadeInCard 0.8s ease forwards;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h3 {
+  margin: 10px 0 5px;
+  font-weight: 900;
+}
+
+.movie-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.small-button {
+  background-color: #ffcc00;
+  color: #111;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 3px;
+  font-size: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 80px;
+}
+
+.small-button:hover {
+  background-color: #e6b800;
+  transform: translateY(-1px);
+}
+
+/* TMDB search results */
+.tmdb-results {
+  margin-top: 30px;
+}
+
+.tmdb-results h2 {
+  text-align: center;
+  color: #ffcc00;
+}
+
+.tmdb-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.tmdb-item {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tmdb-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tmdb-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.trailer-button {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.trailer-button:hover {
+  background-color: #e60000;
+  transform: translateY(-1px);
+}
+
+/* Search and genre filter */
+.search-input,
+.genre-select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus,
+.genre-select:focus {
+  background: #333;
+}
+
+/* Stats section */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.stats p {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.fade-out {
+  animation: fadeOutCard 0.5s forwards;
+}
+
+@keyframes fadeOutCard {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .add-movie-form input,
+  .search-input,
+  .genre-select {
+    font-size: 13px;
+  }
+
+  .small-button {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .main-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .stats p {
+    margin: 5px 0;
+  }
+}
